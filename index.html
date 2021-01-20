@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="get">
+            <div class="form-group">
+                <label for="">User ID</label>
+                <input type="number" name="userId" id="userId" class="form-control">
+                <label for="">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+                <label for="">Age</label>
+                <input type="number" name="age" id="age" class="form-control" placeholder="" aria-describedby="helpId">
+                <button id="addBtn">Add</button>
+                <button id="updateBtn">Update</button>
+                <button id="removeBtn">Remove</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDiUxWNNqoDYDf2TTJ-DFNZaAXemXGbOAQ",
+            authDomain: "asm-is6.firebaseapp.com",
+            databaseURL: "https://asm-is6-default-rtdb.firebaseio.com",
+            projectId: "asm-is6",
+            storageBucket: "asm-is6.appspot.com",
+            messagingSenderId: "441715598456",
+            appId: "1:441715598456:web:e9cda499a3d5bae5b0798d"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
