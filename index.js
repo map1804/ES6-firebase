@@ -26,38 +26,34 @@ addBtn.addEventListener('click', (e)=>{
     });
 });
 
-// delete 1 element
+// update 1 element
 updateBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const
+    const newData = {
+        name : name1.value,
+        age : age.value,
+    }
+
+    const updates = {};
+
+    updates['/users/' + userId.value] = newData;
+    updates['/super-users/' + userId.value] = newData;
+
+    database.ref().update(updates);
+})
+
+
+// delete 1 element
+removeBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    rootRef.child(userId.value).remove()
+    .then(() => {
+        window.alert('Xóa rồi');
+    })
+    .catch(err => {
+        console.error(err);
+    })
 })
 
 
 
-// var database = firebase.database();
-
-// // Workspace
-// const addBtn = document.getElementById("addBtn");
-// const selectBtn = document.getElementById("selectBtn");
-// const updateBtn = document.getElementById("updateBtn");
-// const removeBtn = document.getElementById("removeBtn");
-
-// var idProduct, productName, productPrice, productDescription;
-
-// function ready() {
-//   idProduct = document.getElementById("idProduct").value;
-//   productName = document.getElementById("productName").value;
-//   productPrice = document.getElementById("productPrice").value;
-//   productDescription = document.getElementById("productDescription").value;
-// }
-
-// addBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   ready();
-//   database.ref("/products/" + idProduct).set({
-//     id: idProduct,
-//     productName: productName,
-//     price: productPrice,
-//     description: productDescription,
-//   });
-// });
